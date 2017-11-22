@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com" />
+
+  <remote  name="ninja"
+           fetch="https://github.com/Ninja-OS" />
+
+  <default revision="o8.x"
+           remote="ninja"
+           sync-f="true"
+           sync-c="true"
+           sync-j="8" />
+
+  <!-- NinjaOS -->
+  <project path="manifest" name="manifest" remote="ninja" />
+  <project path="build/make" name="build" remote="ninja" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/kati" name="build_kati" groups="pdk,tradefed" remote="ninja" />
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="ninja" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <project path="bionic" name="bionic" groups="pdk" remote="ninja" />
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="ninja" />
+  <project path="development" name="development" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
+  <project path="device/ninja/sepolicy" name="device_ninja_sepolicy" remote="ninja" />
+  <project path="external/connectivity" name="external_connectivity" groups="pdk" remote="ninja" />
+  <project path="external/ebtables" name="external_ebtables" groups="pdk" remote="ninja" />
+  <project path="external/exfat" name="external_exfat" remote="ninja" />
+  <project path="external/fuse" name="external_fuse" remote="ninja" />
+  <project path="external/htop" name="external_htop" remote="ninja" />
+  <project path="external/json-c" name="external_json-c" remote="ninja" />
+  <project path="external/libncurses" name="external_libncurses" remote="ninja" />
+  <project path="external/libnfc-nxp" name="external_libnfc-nxp" remote="ninja" />
+  <project path="external/mksh" name="external_mksh" groups="pdk" remote="ninja" />
+  <project path="external/nano" name="external_nano" remote="ninja" />
+  <project path="external/skia" name="external_skia" groups="pdk,qcom_msm8x26" remote="ninja" />
+  <project path="external/tinycompress" name="external_tinycompress" groups="pdk" remote="ninja" />
+  <project path="external/selinux" name="external_selinux" groups="pdk" remote="ninja" />
+  <project path="external/toybox" name="external_toybox" groups="pdk" remote="ninja" />
+  <project path="external/wpa_supplicant_8" name="external_wpa_supplicant_8" groups="pdk" remote="ninja" />
+  <project path="frameworks/av" name="frameworks_av" groups="pdk" remote="ninja" />
+  <project path="frameworks/base" name="frameworks_base" remote="ninja" />
+  <project path="frameworks/native" name="frameworks_native" groups="pdk" remote="ninja" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="ninja" />
+  <project path="hardware/ninja/interfaces" name="hardware_ninja_interfaces" remote="ninja" >
+      <copyfile dest="hardware/ninja/Android.bp" src="Android.bp"/>
+  </project>
+  <project path="hardware/broadcom/libbt" name="hardware_broadcom_libbt" groups="pdk" remote="ninja" />
+  <project path="hardware/interfaces" name="hardware_interfaces" groups="pdk" remote="ninja" />
+  <project path="hardware/libhardware" name="hardware_libhardware" remote="ninja" />
+  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" groups="pdk" remote="ninja" />
+  <project path="hardware/ril" name="hardware_ril" groups="pdk" remote="ninja" />
+  <project path="packages/apps/Bluetooth" name="packages_apps_Bluetooth" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
+  <project path="packages/apps/Camera2" name="packages_apps_Camera2" groups="pdk-fs" remote="ninja" />
+  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" groups="pdk-fs" remote="ninja" />
+  <project path="packages/apps/Dialer" name="packages_apps_Dialer" groups="pdk-fs" remote="ninja" />
+  <project path="packages/apps/FMRadio" name="packages_apps_FMRadio" remote="ninja" />
+  <project path="packages/apps/Gallery2" name="packages_apps_Gallery2" groups="pdk-fs" remote="ninja" />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" groups="pdk-fs" remote="ninja" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="ninja" />
+  <project path="packages/inputmethods/LatinIME" name="packages_inputmethods_LatinIME" groups="pdk-fs" remote="ninja" />
+  <project path="packages/apps/PackageInstaller" name="packages_apps_PackageInstaller" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="ninja" />
+  <project path="packages/providers/MediaProvider" name="packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
+  <project path="packages/providers/TelephonyProvider" name="packages_providers_TelephonyProvider" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
+  <project path="packages/services/Telephony" name="packages_services_Telephony" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
+  <project path="system/bt" name="system_bt" groups="pdk" remote="ninja" />
+  <project path="system/core" name="system_core" groups="pdk" remote="ninja" />
+  <project path="system/media" name="system_media" groups="pdk" remote="ninja" />
+  <project path="system/hwservicemanager" name="system_hwservicemanager" groups="pdk" remote="ninja" />
+  <project path="system/nfc" name="system_nfc" groups="pdk" remote="ninja" />
+  <project path="system/sepolicy" name="system_sepolicy" groups="pdk" remote="ninja" />
+  <project path="system/vold" name="system_vold" groups="pdk" remote="ninja" />
+  <project path="vendor/ninja" name="vendor_ninja" remote="ninja" />
+
+</manifest>

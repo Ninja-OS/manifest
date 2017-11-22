@@ -1,0 +1,48 @@
+<img src="https://raw.githubusercontent.com/Ninja-OS/manifest/N/logo.png">
+
+Ninja-OS Oreo source (AOSP)
+========
+
+Getting Started
+---------------
+
+To get started with the building process, you'll need to get familiar with [Git and Repo](http://source.android.com/source/using-repo.html).
+
+To initialize your local repository, use a command like this:
+
+    repo init -u git://github.com/Ninja-OS/manifest.git -b o8.x
+
+Then to sync up:
+
+    repo sync  -f --force-sync --no-clone-bundle --no-tags -j8
+
+Additionally, you can define the number of parallel download repo should do:
+
+    repo sync -jX -f --force-sync --no-clone-bundle --no-tags
+
+With X being the number of parallel downloads
+
+ Building The Project
+ ----------------------------------
+
+From root directory of Ninja-OS type following commands in terminal
+
+	. build/envsetup.sh
+   
+    lunch ninja_$devicecodename-$BuildType
+   
+	brunch $devicecodename
+
+Example
+---------------
+
+If your device code name is "goldfish", then:
+
+	. build/envsetup.sh
+
+    lunch ninja_goldfish-userdebug
+
+	brunch goldfish
+
+Obtaining the compiled zip
+----------------------------------------------

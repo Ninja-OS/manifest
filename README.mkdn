@@ -44,5 +44,4 @@ If your device code name is "goldfish", then:
 
 	brunch goldfish
 
-Obtaining the compiled zip
-----------------------------------------------
+Happy Compiling :)

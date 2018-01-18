@@ -16,8 +16,8 @@
            fetch="https://github.com/Ninja-OS"
            sync-f="true"
            sync-c="true"
-           sync-j="8" />
-		   revision="o8.1" />
+           sync-j="8"
+           revision="o8.1" />
 
   <!-- NinjaOS -->
   <project path="manifest" name="manifest" remote="ninja" />

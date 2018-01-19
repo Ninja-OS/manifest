@@ -37,7 +37,7 @@
   </project>
 
   <project path="bionic" name="bionic" groups="pdk" remote="ninja" />
-  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="ninja" />
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="gzosp" />
   <project path="development" name="development" groups="pdk-cw-fs,pdk-fs" remote="ninja" />
   <project path="device/ninja/sepolicy" name="device_ninja_sepolicy" remote="ninja" />
   <project path="external/connectivity" name="external_connectivity" groups="pdk" remote="gzosp" />
